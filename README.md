@@ -19,7 +19,7 @@ Um RDD é um objeto em memoria que simula um conjunto de dados o qual o spark ir
 Um RDD é tolerante a falhas, e pode ser distribuido para o processamento por diversos workers(nodes) sem perder dados.
 
 - **GroupByKey é menos eficiente que reduceByKey em grandes dataset. Por quê?**
-Pelo fato de o **GroupByKey** enviar em grupo os diversos itens que possuem a mesma correspondência na chave dos valores/dados para os workers, enquanto que o **ReduceByKey** agrega as chaves e soma os valores de mesma correpondencia de indice, retornando apenas uma saída para cada chave-valor distinto, pois foram agregados antes da saída, dessa forma dados mais atômicos são transmitidos pela rede e coletados pelos workers.
+Pelo fato de o **GroupByKey** enviar diversos itens individualmente que possuem a mesma correspondência na chave dos valores/dados para os workers, enquanto que o **ReduceByKey** agrega os indices e soma os valores, retornando apenas uma saída, dessa forma dados mais atômicos são transmitidos pela rede e coletados pelos workers.
 
 ## Explique o que o código Scala abaixo faz.
 
@@ -32,7 +32,18 @@ Pelo fato de o **GroupByKey** enviar em grupo os diversos itens que possuem a me
 05   counts.saveAsTextFile("hdfs://...")
 ~~~
 
-> Na primeira linha do código val textFile = sc.textFile("hdfs://...")
-> O objeto textFile recebe os dados buscados no arquivo através do path declarado.
+> (01) **Na primeira linha do código**
+> O objeto textFile (RDD) recebe os dados buscados no arquivo em disco através do path declarado.
 
+> (02) **Na segunda linha do código**
+> É feita a contagem total de palavras, identificando os limites de cada paralavra por um espaço.
+
+> (03) **Na terceira linha do código**
+> É aplicada a função Map que atribui a quantidade de 1 (uma) unidade para cada palavra contabilizada na contagem.
+
+> (04) **Na quarta linha do código**
+> É aplicada a função Reduce para agregar as palavras iguais e somar suas quantidades em um único par (chave-valor).
+
+> (05) **Na quinta linha do código**
+> O resultado é gravado em um aquivo de texto e salva em disco.
 
