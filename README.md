@@ -34,18 +34,13 @@ O **GroupByKey** trafega mais dados pela rede pois ele envia uma lista de valore
 05   counts.saveAsTextFile("hdfs://...")
 ~~~
 
-> (01) **Na primeira linha do código**
-> O objeto textFile (RDD) recebe os dados buscados no arquivo em disco através do path declarado.
+> (01) O objeto textFile (RDD) recebe os dados buscados no arquivo em disco através do path declarado.
 
-> (02) **Na segunda linha do código**
-> É feita a contagem total de palavras, identificando os limites de cada paralavra por um espaço.
+> (02) É feita a contagem total de palavras, identificando os limites de cada paralavra por um espaço.
 
-> (03) **Na terceira linha do código**
-> É aplicada a função Map que atribui a quantidade de 1 (uma) unidade para cada palavra contabilizada na contagem.
+> (03) É aplicada a função Map que atribui a quantidade de 1 (uma) unidade para cada palavra contabilizada na contagem.
 
-> (04) **Na quarta linha do código**
-> É aplicada a função Reduce para agregar as palavras iguais e somar suas quantidades em um único par (chave-valor).
+> (04) É aplicada a função Reduce para agregar as palavras iguais e somar suas quantidades em um único par (chave-valor).
 
-> (05) **Na quinta linha do código**
-> O resultado é gravado em um aquivo de texto e salva em disco.
+> (05) O resultado é gravado em um aquivo de texto e salva em disco.
 
