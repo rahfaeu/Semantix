@@ -1,5 +1,3 @@
-![Semantix](https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2FC4E0BAQGq03yQ-MDGMw%2Fcompany-logo_200_200%2F0%3Fe%3D2159024400%26v%3Dbeta%26t%3Dpz0_mR8iqEOVHLHlKrjyT-yMdpR92a_9hqH0qqBG22g&imgrefurl=https%3A%2F%2Fbr.linkedin.com%2Fcompany%2Fsemantixbr&tbnid=y8qcUcUMKRO6hM&vet=12ahUKEwip2d_FxIHlAhWtALkGHdq2D0QQMygCegQIARAv..i&docid=25scjTXrUPOjDM&w=200&h=200&itg=1&q=semantix&client=ubuntu&ved=2ahUKEwip2d_FxIHlAhWtALkGHdq2D0QQMygCegQIARAv)
-
 # Desafio Técnico Semantix
 
 ## Questões
