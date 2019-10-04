@@ -25,12 +25,14 @@ Pelo fato de o **GroupByKey** enviar em grupo os diversos itens que possuem a me
 
 
 ~~~Scala
-val textFile = sc.textFile("hdfs://...")
-val counts = textFile.flatMap(line => line.split(" "))
-    .map(word => (word, 1))
-    .reduceByKey(_ + _)
-counts.saveAsTextFile("hdfs://...")
+01   val textFile = sc.textFile("hdfs://...")
+02   val counts = textFile.flatMap(line => line.split(" "))
+03       .map(word => (word, 1))
+04       .reduceByKey(_ + _)
+05   counts.saveAsTextFile("hdfs://...")
 ~~~
 
-> Na primeira linha do código ~~~ val textFile = sc.textFile("hdfs://...") ~~~
+> Na primeira linha do código val textFile = sc.textFile("hdfs://...")
 > O objeto textFile recebe os dados buscados no arquivo através do path declarado.
+
+
