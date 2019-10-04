@@ -4,7 +4,7 @@
 
 ### Qual o objetivo do comando cache em Spark?
 
-O objetivo do cache é otimizar iteratividade com os dados intermediários, resultado do processamento anteriores, evitando a repetição de leitura e transformação dos dados processados inicialmente, o dados que sofrem ações (RDD) são carregados em outro objeto (RDD) na memória, que possui um tamanho menor que o arquivo original, e podem ser reutilizados sempre que necessário, sem a necessidade de reavaliar o arquivo inicial, ler, e transformar novamente.
+O objetivo do cache é permitir a reutilização dos dados já transformados, melhorando a performance em ações de iteratividades, evitando a repetição de leitura e transformação dos dados processados inicialmente, o dados que sofrem ações (RDD) são carregados em outro objeto (RDD) na memória, que possui um tamanho menor que o arquivo original, e podem ser reutilizados sempre que necessário, demandando menos processamento.
 Um RDD que é acessado diversas vezes pela aplicação e não possui cash, é reavaliado a cada ação que recebe, reprocessando os dados desde sua origem.
 
 ### O mesmo código implementado em Spark é normalmente mais rápido que a implementação equivalente em MapReduce. Por quê?
