@@ -21,7 +21,7 @@ Um RDD é um objeto em memoria que simula um conjunto de dados que o spark irá 
 Um RDD é tolerante a falhas, e pode ser distribuído para processamento pelos workers(nodes) sem perder dados, mesmo que haja que no sistema.
 
 ### GroupByKey é menos eficiente que reduceByKey em grandes dataset. Por quê?
-O **GroupByKey** trafega mais dados pela rede pois ele envia uma lista de valores sem agregação para uma partição, já o **ReduceByKey** agrega os dados em chave valor, enviando apenas um saída para cada valor distinto. 
+O **GroupByKey** trafega mais dados pela rede pois ele envia uma lista de valores sem agregação para uma partição. ṕara agregação posterior, já o **ReduceByKey** agrega os dados em chave-valor antes de enviar para as partiçes, enviando apenas um saída para cada valor distinto. 
 
 ## Explique o que o código Scala abaixo faz.
 
