@@ -25,13 +25,10 @@ Pelo fato de o **GroupByKey** enviar em grupo os diversos itens que possuem a me
 
 
 ~~~Scala
-ˋˋˋ
 val textFile = sc.textFile("hdfs://...")
-ˋˋˋ
+val counts = textFile.flatMap(line => line.split(" "))
+    .map(word => (word, 1))
+    .reduceByKey(_ + _)
+counts.saveAsTextFile("hdfs://...")
 ~~~
 
-val counts = textFile.flatMap(line => line.split(" "))
-.map(word => (word, 1))
-.reduceByKey(_ + _)
-counts.saveAsTextFile("hdfs://...")
-ˋˋˋ
