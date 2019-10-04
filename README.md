@@ -23,10 +23,14 @@ Pelo fato de o **GroupByKey** enviar em grupo os diversos itens que possuem a me
 
 ## Explique o que o código Scala abaixo faz.
 
-'''
+
+~~~Scala
+Esta é uma linha de código em Javascript.
+~~~
+ˋˋˋ
 val textFile = sc.textFile("hdfs://...")
 val counts = textFile.flatMap(line => line.split(" "))
 .map(word => (word, 1))
 .reduceByKey(_ + _)
 counts.saveAsTextFile("hdfs://...")
-'''
+ˋˋˋ
