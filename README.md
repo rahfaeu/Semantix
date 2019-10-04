@@ -18,7 +18,7 @@ Ser uma interface entre o spark e a aplicação em execução, é um objeto que 
 ### Explique com suas palavras o que é Resilient Distributed Datasets (RDD).
 
 Um RDD é um objeto em memoria que simula um conjunto de dados que o spark irá processar de forma distribuída, é imutável, não sofre alteção em sua estrutura original. Sempre que é submetido a alguma transformação, uma replica é gerada com os resultados da ação de transformação.
-Um RDD é tolerante a falhas, e pode ser distribuído para o processamento por diversos workers(nodes) sem perder dados.
+Um RDD é tolerante a falhas, e pode ser distribuído para processamento pelos workers(nodes) sem perder dados, mesmo que haja que no sistema.
 
 ### GroupByKey é menos eficiente que reduceByKey em grandes dataset. Por quê?
 O **GroupByKey** trafega mais dados pela rede pois ele envia uma lista de valores sem agregação para uma partição, já o **ReduceByKey** agrega os dados em chave valor, enviando apenas um saída para cada valor distinto. 
