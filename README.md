@@ -32,3 +32,5 @@ val counts = textFile.flatMap(line => line.split(" "))
 counts.saveAsTextFile("hdfs://...")
 ~~~
 
+> Na primeira linha do código ~~~ val textFile = sc.textFile("hdfs://...") ~~~
+> O objeto textFile recebe os dados buscados no arquivo através do path declarado.
